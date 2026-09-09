@@ -130,10 +130,10 @@ jobs:
             RULES="$(jq -r '[.[].why[]] | reduce .[] as $r ([]; if index($r) then . else . + [$r] end) | map("- " + .) | join("\n")' <<<"$ROWS")"
             SUMMARY="$(jq -r '.[0].summary' <<<"$ROWS")"
             SHORT="$(jq -r '.[0].library | split(":")[-1]' <<<"$ROWS")"
-            TITLE="$CVE in $SHORT $(jq -r '.[0].version' <<<"$ROWS")"
+            TITLE="${PRIORITY%% *} $CVE in $SHORT $(jq -r '.[0].version' <<<"$ROWS")"
 
             # 6b. an issue for this CVE already exists somewhere in the organisation
-            FOUND="$(jq -c --arg cve "$CVE" 'map(select(.title | test("^" + $cve + "([^0-9]|$)"))) | first // empty' existing.json)"
+            FOUND="$(jq -c --arg cve "$CVE" 'map(select(.title | test("(^|[^0-9A-Za-z-])" + $cve + "([^0-9]|$)"))) | first // empty' existing.json)"
             if [ -n "$FOUND" ]
             then
               KEPT=$((KEPT + 1))
@@ -187,7 +187,7 @@ jobs:
           set -euo pipefail
           for CVE in $(jq -r --slurpfile now "$BOOK" '[.entries[].cve] - [$now[0].entries[].cve] | unique | .[]' previous.json)
           do
-            FOUND="$(jq -c --arg cve "$CVE" 'map(select((.title | test("^" + $cve + "([^0-9]|$)")) and .state == "OPEN")) | first // empty' existing.json)"
+            FOUND="$(jq -c --arg cve "$CVE" 'map(select((.title | test("(^|[^0-9A-Za-z-])" + $cve + "([^0-9]|$)")) and .state == "OPEN")) | first // empty' existing.json)"
             if [ -n "$FOUND" ]
             then
               gh issue comment "$(jq -r .url <<<"$FOUND")" --body "$CVE is no longer in the book as of $TAG. Left open on purpose, a person decides what happens to this issue."

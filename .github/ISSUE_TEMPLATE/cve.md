@@ -1,7 +1,7 @@
 ---
 name: CVE to fix on a supported line
 about: One issue per CVE from the order book. Opened by the backlog workflow, or by hand for a CVE that is not in the book yet.
-title: "<CVE id> in <library> <version>"
+title: "<P0, P1 or P2> <CVE id> in <library> <version>"
 labels: cve
 ---
 
