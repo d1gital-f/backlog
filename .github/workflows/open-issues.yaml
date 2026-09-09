@@ -150,6 +150,17 @@ jobs:
                 gh issue comment "$URL" --body "Priority in the book $TAG: $PRIORITY"
                 sleep "$PAUSE_SECONDS"
               fi
+              # 6b. a line the book added since the issue was opened: the label here, a comment anywhere
+              MISSING_LINES="$(jq -r --argjson have "$(jq -c .labels <<<"$FOUND")" '[.[].lines[]] | unique | map(select(. as $l | $have | index($l) | not)) | join(",")' <<<"$ROWS")"
+              if [ "$STATE" = "OPEN" ] && [ -n "$MISSING_LINES" ]
+              then
+                if [ "$REPO_FOUND" = "$REPO" ]
+                then
+                  gh issue edit "$URL" --add-label "$MISSING_LINES"
+                fi
+                gh issue comment "$URL" --body "In the book $TAG this CVE is also on: $MISSING_LINES"
+                sleep "$PAUSE_SECONDS"
+              fi
               continue
             fi
 
