@@ -1,0 +1,28 @@
+# Playground only: which repository sees the transferred event, and what the built in token can do.
+name: on-transfer-test
+on:
+  issues:
+    types: [transferred]
+permissions: {}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: read
+    steps:
+      - name: What arrived
+        env:
+          EVENT: ${{ toJSON(github.event) }}
+        run: |
+          set -euo pipefail
+          echo "action: $(jq -r .action <<<"$EVENT")"
+          echo "issue: $(jq -r .issue.html_url <<<"$EVENT")"
+          echo "new repository: $(jq -r '.changes.new_repository.full_name // "none"' <<<"$EVENT")"
+          echo "new issue: $(jq -r '.changes.new_issue.html_url // "none"' <<<"$EVENT")"
+      - name: Can the built in token see the board
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          gh project item-list 2 --owner d1gital-f --limit 1 --format json > /dev/null 2> err.txt
+          echo "exit=$? $(head -c 200 err.txt)"
