@@ -7,6 +7,7 @@ The CVEs OSERA fixes on the lines it supports, in priority order, one GitHub iss
 | `supported-lines.csv` | The lines OSERA supports, one row each: Framework, Boot and Security versions, status, where the decision came from |
 | `cve-backlog.json` | The order book. One entry per CVE and library at the version the line uses. Scores are the CVSS 3.1 base score as recorded at NVD (OSV where NVD has nothing, `cvss_version` says which). Priority and rules are the Risk Navigator's, quoted on every row. Order: CISA KEV first, then the priority band, then the score, then EPSS |
 | `cve-backlog.md` | The same book as a readable table |
+| `coordinates.csv` | Every library and version each supported line resolves to, the book's entries are the subset with a qualifying CVE. Read by the line manager to watch the whole line |
 | `schema/` | What one entry must look like |
 | `.github/ISSUE_TEMPLATE/cve.md` | The issue template, a person can use it by hand for a CVE that is not in the book yet |
 
