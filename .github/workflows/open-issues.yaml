@@ -10,7 +10,8 @@
 #
 # Safe to run again: it reads the book at the tag and the issues that already exist, and only
 # does what is missing. It never closes, reopens, assigns or deletes an issue.
-name: open-issues
+name: OSERA backlog issue orchestration
+run-name: OSERA backlog issue orchestration ${{ github.ref_name }}
 
 on:
   push:
@@ -120,7 +121,7 @@ jobs:
             # 6a. every row of the book for this CVE (one row per library)
             ROWS="$(jq -c --arg cve "$CVE" '[.entries[] | select(.cve == $cve)]' "$BOOK")"
             PRIORITY="$(jq -r '.[0].priority' <<<"$ROWS")"
-            LIBRARIES="$(jq -r '[.[] | .library + (if .library_per_advisory then " (advisory names " + .library_per_advisory + ")" else "" end)] | join(", ")' <<<"$ROWS")"
+            LIBRARIES="$(jq -r '[.[].library] | join(", ")' <<<"$ROWS")"
             VERSIONS="$(jq -r '[.[].version] | unique | join(", ")' <<<"$ROWS")"
             LINES="$(jq -r '[.[].lines[]] | unique | join(", ")' <<<"$ROWS")"
             KEV="$(jq -r 'if any(.[]; .cisa_kev) then "yes" else "no" end' <<<"$ROWS")"
@@ -128,7 +129,6 @@ jobs:
             EPSS="$(jq -r '.[0].epss_percentile // "not scored"' <<<"$ROWS")"
             RULES="$(jq -r '[.[].why[]] | reduce .[] as $r ([]; if index($r) then . else . + [$r] end) | map("- " + .) | join("\n")' <<<"$ROWS")"
             SUMMARY="$(jq -r '.[0].summary' <<<"$ROWS")"
-            NOTES="$(jq -r '[.[].notes[]] | unique | if length == 0 then "none" else map("- " + .) | join("\n") end' <<<"$ROWS")"
             SHORT="$(jq -r '.[0].library | split(":")[-1]' <<<"$ROWS")"
             TITLE="$CVE in $SHORT $(jq -r '.[0].version' <<<"$ROWS")"
 
@@ -156,7 +156,7 @@ jobs:
             # 6c. no issue yet: fill the template and open one
             BODY="$TEMPLATE_BODY"
             BODY="${BODY//"<CVE id, with the link to the advisory>"/$CVE, https://nvd.nist.gov/vuln/detail/$CVE}"
-            BODY="${BODY//"<group:artifact as the advisory names it, and the corrected name when the producer found the code elsewhere>"/$LIBRARIES}"
+            BODY="${BODY//"<group:artifact of the jar that holds the affected code>"/$LIBRARIES}"
             BODY="${BODY//"<version>"/$VERSIONS}"
             BODY="${BODY//"<the supported lines this CVE is on>"/$LINES}"
             BODY="${BODY//"<priority band>"/$PRIORITY}"
@@ -165,7 +165,6 @@ jobs:
             BODY="${BODY//"<value>"/$EPSS}"
             BODY="${BODY//"<one rule per line>"/$RULES}"
             BODY="${BODY//"<the advisory's one line summary>"/$SUMMARY}"
-            BODY="${BODY//"<anything the book carries on this CVE, for example a patch already published by a producer outside OSERA, or none>"/$NOTES}"
             BODY="${BODY//"<book version tag>"/$TAG}"
             BODY="${BODY//"<link to the row in cve-backlog.md>"/https://github.com/$ORG/$REPO/blob/$TAG/cve-backlog.md}"
             LABELS="cve,$PRIORITY,$(jq -r '[.[].lines[]] | unique | join(",")' <<<"$ROWS")"

@@ -8,7 +8,7 @@ labels: cve
 ## What
 
 - CVE: <CVE id, with the link to the advisory>
-- Library: <group:artifact as the advisory names it, and the corrected name when the producer found the code elsewhere>
+- Library: <group:artifact of the jar that holds the affected code>
 - Version on the line: <version>
 - Lines: <the supported lines this CVE is on>
 
@@ -25,14 +25,7 @@ labels: cve
 
 <the advisory's one line summary>
 
-## Notes
-
-<anything the book carries on this CVE, for example a patch already published by a producer outside OSERA, or none>
-
 ## Book
 
 - Opened from: <book version tag>
 - Entry: <link to the row in cve-backlog.md>
-
----
-How the CVE gets fixed is the producer's call. The producer moves this issue into the patch repository and tracks the work there. The gate closes it with the published coordinates.
