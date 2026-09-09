@@ -107,9 +107,9 @@
   "GHSA-33hj-rcmx-86mv": {
     "cve": "CVE-2024-4027",
     "severity": "HIGH",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 7.5,
+    "nvd_status": "Deferred",
+    "nvd_checked": true
   },
   "GHSA-355h-qmc2-wpwf": {
     "cve": "CVE-2026-2332",
@@ -282,9 +282,9 @@
   "GHSA-4g8c-wm8x-jfhw": {
     "cve": "CVE-2025-24970",
     "severity": "HIGH",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 7.5,
+    "nvd_status": "Analyzed",
+    "nvd_checked": true
   },
   "GHSA-4g9r-vxhx-9pgx": {
     "cve": "CVE-2024-25710",
@@ -366,9 +366,9 @@
   "GHSA-5568-6qcg-g7fx": {
     "cve": "CVE-2026-39304",
     "severity": "HIGH",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 7.5,
+    "nvd_status": "Modified",
+    "nvd_checked": true
   },
   "GHSA-558v-64gr-wgg4": {
     "cve": "CVE-2026-59901",
@@ -478,9 +478,9 @@
   "GHSA-5m62-pw8w-7w9f": {
     "cve": "CVE-2026-43515",
     "severity": "CRITICAL",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 9.1,
+    "nvd_status": "Analyzed",
+    "nvd_checked": true
   },
   "GHSA-5m9f-rphj-c435": {
     "cve": "CVE-2026-63336",
@@ -534,9 +534,9 @@
   "GHSA-5x3r-wrvg-rp6q": {
     "cve": "CVE-2026-47244",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 5.3,
+    "nvd_status": "Analyzed",
+    "nvd_checked": true
   },
   "GHSA-5xm9-x7x4-4j5x": {
     "cve": "CVE-2024-52981",
@@ -660,9 +660,9 @@
   "GHSA-6xx3-rg99-gc3p": {
     "cve": "CVE-2020-15522",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 5.9,
+    "nvd_status": "Modified",
+    "nvd_checked": true
   },
   "GHSA-72m5-fvvv-55m6": {
     "cve": "CVE-2020-26939",
@@ -731,8 +731,8 @@
     "cve": "CVE-2013-4002",
     "severity": "HIGH",
     "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_status": "Modified",
+    "nvd_checked": true
   },
   "GHSA-7jqf-v358-p8g7": {
     "cve": "CVE-2024-38286",
@@ -877,9 +877,9 @@
   "GHSA-98wm-3w3q-mw94": {
     "cve": "CVE-2022-38751",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 6.5,
+    "nvd_status": "Modified",
+    "nvd_checked": true
   },
   "GHSA-9cmq-m9j5-mvww": {
     "cve": "CVE-2024-38808",
@@ -898,9 +898,9 @@
   "GHSA-9fw2-h3hf-293r": {
     "cve": "CVE-2026-41716",
     "severity": "HIGH",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 7.5,
+    "nvd_status": "Analyzed",
+    "nvd_checked": true
   },
   "GHSA-9m3c-qcxr-9x87": {
     "cve": "CVE-2026-25854",
@@ -933,9 +933,9 @@
   "GHSA-c2gf-v879-257j": {
     "cve": "CVE-2026-48043",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 7.5,
+    "nvd_status": "Modified",
+    "nvd_checked": true
   },
   "GHSA-c4c3-7fpv-j4q5": {
     "cve": "CVE-2026-75595",
@@ -1003,9 +1003,9 @@
   "GHSA-cjpg-rgq5-fr37": {
     "cve": "CVE-2026-41853",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 5.3,
+    "nvd_status": "Analyzed",
+    "nvd_checked": true
   },
   "GHSA-cm33-6792-r9fm": {
     "cve": "CVE-2026-42579",
@@ -1276,16 +1276,16 @@
   "GHSA-hf52-78x8-6w3w": {
     "cve": "CVE-2026-49270",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 5.9,
+    "nvd_status": "Analyzed",
+    "nvd_checked": true
   },
   "GHSA-hg6c-8mvr-jqc9": {
     "cve": "CVE-2026-42588",
     "severity": "HIGH",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 8.1,
+    "nvd_status": "Analyzed",
+    "nvd_checked": true
   },
   "GHSA-hgj6-7826-r7m5": {
     "cve": "CVE-2026-54514",
@@ -1325,9 +1325,9 @@
   "GHSA-hr8g-6v94-x4m9": {
     "cve": "CVE-2023-33201",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 5.3,
+    "nvd_status": "Modified",
+    "nvd_checked": true
   },
   "GHSA-hvcg-qmg6-jm4c": {
     "cve": "CVE-2026-50020",
@@ -1339,9 +1339,9 @@
   "GHSA-j26w-f9rq-mr2q": {
     "cve": "CVE-2024-9823",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 7.5,
+    "nvd_status": "Modified",
+    "nvd_checked": true
   },
   "GHSA-j288-q9x7-2f5v": {
     "cve": "CVE-2025-48924",
@@ -1396,8 +1396,8 @@
     "cve": "CVE-2026-10532",
     "severity": "LOW",
     "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_status": "Deferred",
+    "nvd_checked": true
   },
   "GHSA-jjjh-jjxp-wpff": {
     "cve": "CVE-2022-42003",
@@ -1724,16 +1724,16 @@
   "GHSA-r936-gwx5-v52f": {
     "cve": "CVE-2025-41242",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 5.9,
+    "nvd_status": "Deferred",
+    "nvd_checked": true
   },
   "GHSA-rc42-6c7j-7h5r": {
     "cve": "CVE-2025-22235",
     "severity": "HIGH",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 7.3,
+    "nvd_status": "Deferred",
+    "nvd_checked": true
   },
   "GHSA-rcpf-vj53-7h2m": {
     "cve": "CVE-2018-1257",
@@ -1787,9 +1787,9 @@
   "GHSA-v435-xc8x-wvr9": {
     "cve": "CVE-2024-30171",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 5.9,
+    "nvd_status": "Deferred",
+    "nvd_checked": true
   },
   "GHSA-v682-8vv8-vpwr": {
     "cve": "CVE-2024-23672",
@@ -1857,9 +1857,9 @@
   "GHSA-vqgp-pf68-6947": {
     "cve": "CVE-2026-41847",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 5.3,
+    "nvd_status": "Analyzed",
+    "nvd_checked": true
   },
   "GHSA-vxf7-qj7q-83fh": {
     "cve": "CVE-2026-22746",
@@ -1871,9 +1871,9 @@
   "GHSA-w37g-rhq8-7m4j": {
     "cve": "CVE-2022-41854",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 6.5,
+    "nvd_status": "Modified",
+    "nvd_checked": true
   },
   "GHSA-w3c8-7r8f-9jp8": {
     "cve": "CVE-2024-38828",
@@ -1892,9 +1892,9 @@
   "GHSA-w4jq-qh47-hvjq": {
     "cve": "CVE-2020-14338",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 5.3,
+    "nvd_status": "Modified",
+    "nvd_checked": true
   },
   "GHSA-w573-9ffj-6ff9": {
     "cve": "CVE-2026-45536",
@@ -1955,9 +1955,9 @@
   "GHSA-wg6q-6289-32hp": {
     "cve": "CVE-2026-5588",
     "severity": "MODERATE",
-    "nvd_score": 0,
-    "nvd_status": "",
-    "nvd_checked": false
+    "nvd_score": 7.5,
+    "nvd_status": "Awaiting Analysis",
+    "nvd_checked": true
   },
   "GHSA-whpp-xv3h-rwxf": {
     "cve": "CVE-2026-40999",
