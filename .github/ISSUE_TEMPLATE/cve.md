@@ -1,0 +1,38 @@
+---
+name: CVE to fix on a supported line
+about: One issue per CVE from the order book. Opened by the backlog workflow, or by hand for a CVE that is not in the book yet.
+title: "<CVE id> in <library> <version>"
+labels: cve
+---
+
+## What
+
+- CVE: <CVE id, with the link to the advisory>
+- Library: <group:artifact as the advisory names it, and the corrected name when the producer found the code elsewhere>
+- Version on the line: <version>
+- Lines: <the supported lines this CVE is on>
+
+## Why it is in the book
+
+- Priority: <priority band>
+- CVSS: <score and version, as recorded at NVD>
+- CISA KEV: <yes or no>
+- EPSS percentile: <value>
+- Rules that put it here, from https://github.com/finos-osera/risk-navigator/issues/7:
+<one rule per line>
+
+## Summary
+
+<the advisory's one line summary>
+
+## Notes
+
+<anything the book carries on this CVE, for example a patch already published by a producer outside OSERA, or none>
+
+## Book
+
+- Opened from: <book version tag>
+- Entry: <link to the row in cve-backlog.md>
+
+---
+How the CVE gets fixed is the producer's call. The producer moves this issue into the patch repository and tracks the work there. The gate closes it with the published coordinates.
